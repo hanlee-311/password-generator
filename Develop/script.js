@@ -25,6 +25,8 @@ function writePassword() {
     if (confirmLength === false) {
       console.log("Starting Over!");
       return writePassword();
+      } else {
+        var passwordLength = parseInt(userLength);
       }
     }
 
@@ -61,7 +63,20 @@ function writePassword() {
     }
   }
 
+  //Generate Password Based on user parameters
+  var randomPassword = "";
+  for (var i = 0; i < passwordLength; i++) {
+    userPassword[
+      Math.floor(Math.random() * userPassword.length)
+    ];
+    randomPassword+= userPassword[
+      Math.floor(Math.random() * userPassword.length)
+    ];
+    
+  }
+
 }
+
 
   // var password = generatePassword();
   // var passwordText = document.querySelector("#password");

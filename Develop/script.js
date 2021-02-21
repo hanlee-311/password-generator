@@ -4,18 +4,28 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   console.log("clicked!");
-  var length = prompt("How long do you want your password to be?", "Enter a number between 8 and 128.");
-  if (length < 8 || length > 128) {
+  var userLength = prompt("How long do you want your password to be?", "Enter a number between 8 and 128.");
+  if (userLength < 8 || userLength > 128) {
     alert("Please enter a number between 8 or 128.");
+    console.log("Did not enter an acceptable number!");
+    writePassword();
   } else {
-    alert("Thank you.");
+    // confirm("You have entered " + userLength + ". Is this correct?");
+    console.log("Acceptable Number!");
+    var userUpper = prompt("Would you like uppercase letters?", "Enter 'Yes' or 'No'");
+    if (userUpper == "No") {
+      console.log("There will be no uppercase letters.");
+    } else {
+      console.log("There will be uppercase letters.");
+    }
+
   }
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
 
 
-  passwordText.value = password;
+  // passwordText.value = password;
 
 }
 

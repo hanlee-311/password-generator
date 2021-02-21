@@ -6,8 +6,16 @@ const lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 const upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "~", "`", "{", "}", "[", "]", "|", ";", ":", "'", ",", "<", ">", ".", "?", "/"];
 
+// function writePassword() {
+//   var password = userPassword;
+//   var passwordText = document.querySelector("#password");
+
+
+//   passwordText.value = password;
+// }
+
 // Write password to the #password input
-function writePassword() {
+function gerenatePassword() {
   console.log("clicked!");
   //Confirm Password Length
   var userLength = prompt("How long do you want your password to be?", "Enter a number between 8 and 128.");
@@ -17,14 +25,14 @@ function writePassword() {
   } else if (userLength < 8 || userLength > 128) {
     alert("Please enter a number between 8 and 128.");
     console.log("Did not enter an acceptable number!");
-    return writePassword();
+    return gerenatePassword();
 
   } else {
     console.log("Acceptable Number!");
     var confirmLength = confirm("You have entered " + userLength + ". Is this correct?");
     if (confirmLength === false) {
       console.log("Starting Over!");
-      return writePassword();
+      return gerenatePassword();
       } else {
         var passwordLength = parseInt(userLength);
       }
@@ -47,12 +55,12 @@ function writePassword() {
   }
 
   //Confirm numbers
-  var confirmNumber = confirm("Do you want to have numbers? Press 'Cancel' for No.");
-  if (confirmNumber === true) {
-    for (var i = 0; i < numArray.length; i++) {
-      userPassword.push(numArray[i]);
-    }
-  }
+  // var confirmNumber = confirm("Do you want to have numbers? Press 'Cancel' for No.");
+  // if (confirmNumber === true) {
+  //   for (var i = 0; i < numArray.length; i++) {
+  //     userPassword.push(numArray[i]);
+  //   }
+  // }
 
 
   //Confirm special characters
@@ -74,18 +82,16 @@ function writePassword() {
     ];
     
   }
+  var password = userPassword;
+  var passwordText = document.querySelector("#password");
 
+
+  passwordText.value = password;
 }
 
 
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-
-  // passwordText.value = password;
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", gerenatePassword);
 
 
 
@@ -98,8 +104,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // console.log(letters[randomNumber]);
 
-function returnRandomChar(array) {
-  const randomNumber = Math.floor(Math.random() = array.length);
-  return array[randomNumber];
-}
+// function returnRandomChar(array) {
+//   const randomNumber = Math.floor(Math.random() = array.length);
+//   return array[randomNumber];
+// }
 

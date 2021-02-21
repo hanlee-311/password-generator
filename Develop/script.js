@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var userPassword = [];
 const numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -30,24 +31,24 @@ function writePassword() {
   //Confirm uppercase
   var confirmUpper = confirm("Your password will be " + userLength +" characters. Do you want to have uppercase letters? Press 'Cancel' for No.");
     if (confirmUpper === true) {
-      for (var i = 0; i < confirmUpper.length; i++) {
-      
+      for (var i = 0; i < upperCaseChar.length; i++) {
+        userPassword.push(upperCaseChar[i]);
       }
     }
 
   //Confirm lowercase
   var confirmLower = confirm("Do you want to have lowercase letters? Press 'Cancel' for No.");
   if (confirmLower === true) {
-    for (var i = 0; i < confirmLower.length; i++) {
-
+    for (var i = 0; i < lowerCaseChar.length; i++) {
+      userPassword.push(lowerCaseChar[i]);
     }
   }
 
   //Confirm numbers
   var confirmNumber = confirm("Do you want to have numbers? Press 'Cancel' for No.");
   if (confirmNumber === true) {
-    for (var i = 0; i < confirmLower.length; i++) {
-
+    for (var i = 0; i < numArray.length; i++) {
+      userPassword.push(numArray[i]);
     }
   }
 
@@ -55,8 +56,8 @@ function writePassword() {
   //Confirm special characters
   var confirmSpecial = confirm("Do you want to have special characters? Press 'Cancel' for No.");
   if (confirmSpecial === true) {
-    for (var i = 0; i < confirmSpecial.length; i++){
-
+    for (var i = 0; i < specialArray.length; i++){
+      userPassword.push(specialArray[i]);
     }
   }
 

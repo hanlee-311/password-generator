@@ -22,6 +22,7 @@ function writePassword() {
     console.log("Acceptable Number!");
     var confirmLength = confirm("You have entered " + userLength + ". Is this correct?");
     if (confirmLength === false) {
+      console.log("Starting Over!");
       return writePassword();
       }
     }
@@ -42,6 +43,14 @@ function writePassword() {
     }
   }
 
+  //Confirm numbers
+  var confirmNumber = confirm("Do you want to have numbers? Press 'Cancel' for No.");
+  if (confirmNumber === true) {
+    for (var i = 0; i < confirmLower.length; i++) {
+
+    }
+  }
+
 
   //Confirm special characters
   var confirmSpecial = confirm("Do you want to have special characters? Press 'Cancel' for No.");
@@ -53,11 +62,11 @@ function writePassword() {
 
 }
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
 
 
-  passwordText.value = password;
+  // passwordText.value = password;
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

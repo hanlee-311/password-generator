@@ -6,14 +6,6 @@ const lowerCaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 const upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "~", "`", "{", "}", "[", "]", "|", ";", ":", "'", ",", "<", ">", ".", "?", "/"];
 
-// function writePassword() {
-//   var password = userPassword;
-//   var passwordText = document.querySelector("#password");
-
-
-//   passwordText.value = password;
-// }
-
 // Write password to the #password input
 function gerenatePassword() {
   console.log("clicked!");
@@ -43,6 +35,7 @@ function gerenatePassword() {
     if (confirmUpper === true) {
       for (var i = 0; i < upperCaseChar.length; i++) {
         userPassword.push(upperCaseChar[i]);
+        
       }
     }
 
@@ -54,13 +47,13 @@ function gerenatePassword() {
     }
   }
 
-  //Confirm numbers
-  // var confirmNumber = confirm("Do you want to have numbers? Press 'Cancel' for No.");
-  // if (confirmNumber === true) {
-  //   for (var i = 0; i < numArray.length; i++) {
-  //     userPassword.push(numArray[i]);
-  //   }
-  // }
+  // Confirm numbers
+  var confirmNumber = confirm("Do you want to have numbers? Press 'Cancel' for No.");
+  if (confirmNumber === true) {
+    for (var i = 0; i < numArray.length; i++) {
+      userPassword.push(numArray[i]);
+    }
+  }
 
 
   //Confirm special characters
@@ -71,18 +64,21 @@ function gerenatePassword() {
     }
   }
 
+console.log(userPassword);
+
   //Generate Password Based on user parameters
   var randomPassword = "";
   for (var i = 0; i < passwordLength; i++) {
-    userPassword[
-      Math.floor(Math.random() * userPassword.length)
-    ];
     randomPassword+= userPassword[
       Math.floor(Math.random() * userPassword.length)
     ];
     
   }
-  var password = userPassword;
+  
+}
+
+function writePassword() {
+  var password = randomPassword;
   var passwordText = document.querySelector("#password");
 
 

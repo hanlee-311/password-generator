@@ -41,7 +41,6 @@ function generatePassword() {
     if (confirmUpper === true) {
       for (var i = 0; i < upperCaseChar.length; i++) {
         userPassword.push(upperCaseChar[i]);
-        
       }
     }
 
@@ -60,7 +59,6 @@ function generatePassword() {
       userPassword.push(numArray[i]);
     }
   }
-
 
   //Confirm special characters
   var confirmSpecial = confirm("Do you want to have special characters? Press 'Cancel' for No.");

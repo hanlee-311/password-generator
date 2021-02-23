@@ -1,10 +1,11 @@
 # 03 JavaScript: Password Generator
+![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
-## Your Task
+## Description 
+Company wanted a program to help generate a secure, strong, random password for employees. Employees are able to set the parameters of length and type of characters to be generated in the password. 
 
-This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+#### Deployed Link: [Password Generator](https://hanlee-311.github.io/password-generator/)
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
 
 ## User Story
 
@@ -14,79 +15,20 @@ I WANT to randomly generate a password that meets certain criteria
 SO THAT I can create a strong password that provides greater security
 ```
 
-## Acceptance Criteria
+## Functions of Password Generator
+- User can set a length of their password between 8-128 characters.
+- User can confirm their length of password before continuing to the next series of parameters. 
+- User can choose to use uppercase, lowercase, numbers, and/or special characters in their password. 
+- After user has confirmed their choice of parameters, a random password will appear on the screen based off the user's choices. 
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-✅THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-✅THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-✅THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-✅THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-✅THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-✅THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+### Changes Made to Javascript
+- Created a function that generates a random password
+- Within this function, a series of prompts, alerts, and confirms will select from a series of arrays for the user's parameters. 
+- User will not be able to use anything but a number in the first prompt for password length. 
+- The generator will alert the user if the password length is not long enough, or if the input is not a number. 
+- The generator will allow the user to confirm that they want their password to be the chosen number they put in, or change it if they want to. 
+- Confirm prompts for the parameters (uppercase, lowercase, number, and special characters) will appear after length has been confirmed. 
+- Based on the user's choices, the script will choice from a series of array's random characters set to the length chosen by the user. 
+- The random password that is generated will appear on the screen for the user to see. 
 
-## Mock-Up
 
-The following image shows the web application's appearance and functionality:
-
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
-
-### Deployment: 32%
-
-* ✅Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* ✅GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* ✅Application user experience is intuitive and easy to navigate.
-
-* ✅Application user interface style is clean and polished.
-
-* ✅Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* ✅Repository has a unique name.
-
-* ✅Repository follows best practices for file structure and naming conventions.
-
-* ✅Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* ✅Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

@@ -7,24 +7,30 @@ const upperCaseChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L
 const specialArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "~", "`", "{", "}", "[", "]", "|", ";", ":", "'", ",", "<", ">", ".", "?", "/"];
 
 // Write password to the #password input
-function gerenatePassword() {
+function generatePassword() {
+  userPassword = [];
   console.log("clicked!");
   //Confirm Password Length
   var userLength = prompt("How long do you want your password to be?", "Enter a number between 8 and 128.");
   if (userLength === null) {
     return;
 
-  } else if (userLength < 8 || userLength > 128) {
+  } else if (isNaN(userLength)) {
+    alert("Please enter a number.");
+    console.log("Not a number.");
+    return generatePassword();
+
+  } else if (userLength < 8 || userLength > 128 || isNaN(userLength)) {
     alert("Please enter a number between 8 and 128.");
     console.log("Did not enter an acceptable number!");
-    return gerenatePassword();
+    return generatePassword();
 
   } else {
     console.log("Acceptable Number!");
     var confirmLength = confirm("You have entered " + userLength + ". Is this correct?");
     if (confirmLength === false) {
       console.log("Starting Over!");
-      return gerenatePassword();
+      return generatePassword();
       } else {
         var passwordLength = parseInt(userLength);
       }
@@ -64,7 +70,7 @@ function gerenatePassword() {
     }
   }
 
-console.log(userPassword);
+  console.log(userPassword);
 
   //Generate Password Based on user parameters
   var randomPassword = "";
@@ -74,11 +80,11 @@ console.log(userPassword);
     ];
     
   }
-  
+  return randomPassword;
 }
 
 function writePassword() {
-  var password = randomPassword;
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
 
@@ -87,7 +93,7 @@ function writePassword() {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", gerenatePassword);
+generateBtn.addEventListener("click", writePassword);
 
 
 
@@ -96,12 +102,4 @@ generateBtn.addEventListener("click", gerenatePassword);
 
 
 
-// const randomNumber = Math.floor(Math.random() = numArray.length);
-
-// console.log(letters[randomNumber]);
-
-// function returnRandomChar(array) {
-//   const randomNumber = Math.floor(Math.random() = array.length);
-//   return array[randomNumber];
-// }
 
